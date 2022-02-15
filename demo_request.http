@@ -4,7 +4,7 @@ Accept: application/json
 
 
 ### GET request User by ID
-GET http://localhost:8085/user/1
+GET http://localhost:8085/user/2
 Accept: application/json
 
 
@@ -13,7 +13,18 @@ POST http://localhost:8085/user
 Content-Type: application/json
 
 {
-  "name": "Petr",
-  "lastName": "Petrov",
-  "mobile" : "415263"
+  "name": "Ivan",
+  "lastName": "Ivanov",
+  "mobile" : "123765"
 }
+
+### Send PUT request with json body
+PUT http://localhost:8085/user/3
+Content-Type: application/json
+
+{
+  "mobile" : "999777"
+}
+
+### Send DELETE request with json body
+DELETE http://localhost:8085/user/4
