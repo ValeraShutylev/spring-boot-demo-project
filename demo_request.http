@@ -4,7 +4,7 @@ Accept: application/json
 
 
 ### GET request User by ID
-GET http://localhost:8085/user/2
+GET http://localhost:8085/user/abf86d24-abf5-4a8b-ace2-e28bbbc5bffc
 Accept: application/json
 
 
@@ -13,18 +13,28 @@ POST http://localhost:8085/user
 Content-Type: application/json
 
 {
-  "name": "Ivan",
-  "lastName": "Ivanov",
-  "mobile" : "123765"
+  "name": "Petr",
+  "lastName": "Petrov",
+  "mobile" : "9998872"
 }
 
 ### Send PUT request with json body
-PUT http://localhost:8085/user/3
+PUT http://localhost:8085/user/68ceee02-cf3a-41e5-9261-f43dd755b827
 Content-Type: application/json
 
 {
-  "mobile" : "999777"
+  "name": "Petr",
+  "lastName": "Petrov",
+  "mobile": "12345312"
+}
+
+### Send PATCH request to update salary
+PATCH http://localhost:8085/user/68ceee02-cf3a-41e5-9261-f43dd755b827
+Content-Type: application/json
+
+{
+  "salary" : "20000"
 }
 
 ### Send DELETE request with json body
-DELETE http://localhost:8085/user/4
+DELETE http://localhost:8085/user/2
