@@ -1,0 +1,36 @@
+---
+version: '3.8'
+services:
+  postgres10:
+    container_name: postgres10
+    image: postgres:10
+    restart: always
+    env_file: .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - user_network
+
+  user_service:
+    container_name: user_service
+    restart: always
+    build:
+      context: .
+    env_file: .env
+    ports:
+      - "8085:8085"
+    networks:
+      - user_network
+    depends_on:
+      - postgres10
+
+volumes:
+  db:
+    driver: local
+
+networks:
+  user_network:
+    name: user_network
+    driver: bridge
